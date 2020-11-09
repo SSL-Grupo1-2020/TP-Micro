@@ -1,0 +1,4 @@
+inicio
+	algo := 5;
+	otracosa := algo + 3;
+fin
