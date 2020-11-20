@@ -32,19 +32,19 @@ leer							{return (LEER);};
 escribir 						{return (ESCRIBIR);};
 inicio 							{return (INICIO);};
 fin 							{return (FIN);};
-" "								{};
-{constEntera} 					{return (CONSTANTE);};
+" "							{};
+{constEntera} 						{return (CONSTANTE);};
 ":=" 							{return (ASIGNACION);};
 "+" 							{return (SUMA);};
 "-" 							{return (RESTA);};
-{identificador} 				{return (ID);};
+{identificador} 					{return (ID);};
 "(" 							{return (PARENIZQUIERDO);};
 ")" 							{return (PARENDERECHO);};
-\n 								{linea++;return (NL);};
-\t								{};
+\n 							{linea++;return (NL);};
+\t							{};
 ";" 							{return (PYCOMA);};
 "," 							{return (PYCOMA);};
-. 								{printf("Error lexico en linea %d\n",linea);};
+. 							{printf("Error lexico en linea %d\n",linea);};
 
 %%
 

@@ -15,7 +15,7 @@ programa: INICIO sentencias FIN NL {ejecucionCorrecta();} | INICIO sentencias FI
 ;
 sentencias: sentencias sentencia | sentencia | NL
 ;
-sentencia: ID ASIGNACION expresion PYCOMA | ID ASIGNACION expresion PYCOMA NL | PYCOMA
+sentencia: ID ASIGNACION expresion PYCOMA | ID ASIGNACION expresion PYCOMA NL | PYCOMA | PYCOMA NL
 ;
 expresion: primaria | expresion operadorAditivo primaria
 ;
@@ -37,8 +37,8 @@ int main(int argc,char **argv){
 
 	printf("\t\tCompilador de Micro del Grupo 1\n------------------------------------------------------------------\n\t\t\t*~- GRUPO 1 -~*\n-Integrantes:\n\t~Berrojalviz, Tomas\n\t~Carballo, Tomas\n\t~Garcia, Ignacio\n\t~Chittaro, Paula\n------------------------------------------------------------------\n\n");
 	
-	if (argc>1){
-		yyin=fopen(argv[1],"rt");
+	if (argc > 1){
+		yyin = fopen(argv[1],"r");
 		printf("Se compilara el archivo: %s\n\n",argv[1]);
 	}
 	else

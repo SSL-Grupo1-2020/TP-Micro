@@ -1,4 +1,6 @@
 inicio
 	algo := 5;
 	otracosa := algo + 3;
+	;
+	suma := algo + otracosa;
 fin
