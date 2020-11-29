@@ -39,35 +39,37 @@
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     ASIGNACION = 258,
-     PYCOMA = 259,
-     CONSTANTE = 260,
-     SUMA = 261,
-     RESTA = 262,
-     PARENIZQUIERDO = 263,
-     PARENDERECHO = 264,
-     NL = 265,
-     INICIO = 266,
-     FIN = 267,
-     LEER = 268,
-     ESCRIBIR = 269,
-     ID = 270
+     CONSTANTE = 258,
+     SUMA = 259,
+     RESTA = 260,
+     ASIGNACION = 261,
+     PYCOMA = 262,
+     COMA = 263,
+     PARENIZQUIERDO = 264,
+     PARENDERECHO = 265,
+     NL = 266,
+     INICIO = 267,
+     FIN = 268,
+     LEER = 269,
+     ESCRIBIR = 270,
+     ID = 271
    };
 #endif
 /* Tokens.  */
-#define ASIGNACION 258
-#define PYCOMA 259
-#define CONSTANTE 260
-#define SUMA 261
-#define RESTA 262
-#define PARENIZQUIERDO 263
-#define PARENDERECHO 264
-#define NL 265
-#define INICIO 266
-#define FIN 267
-#define LEER 268
-#define ESCRIBIR 269
-#define ID 270
+#define CONSTANTE 258
+#define SUMA 259
+#define RESTA 260
+#define ASIGNACION 261
+#define PYCOMA 262
+#define COMA 263
+#define PARENIZQUIERDO 264
+#define PARENDERECHO 265
+#define NL 266
+#define INICIO 267
+#define FIN 268
+#define LEER 269
+#define ESCRIBIR 270
+#define ID 271
 
 
 
@@ -77,14 +79,16 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 8 "parserMicro-Grupo1.y"
+#line 15 "parserMicro-Grupo1.y"
 
    char* cadena;
+   int entero;
+   char caracter;
 
 
 
 /* Line 1676 of yacc.c  */
-#line 88 "y.tab.h"
+#line 92 "y.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

@@ -3,4 +3,7 @@ inicio
 	otracosa := algo + 3;
 	;
 	suma := algo + otracosa;
+	leer (a,b);
+	cc := a + (b-2);
+	escribir (cc, a+4);
 fin
