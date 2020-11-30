@@ -83,7 +83,7 @@ char** variables;
 int* valores;
 
 void ejecucionCorrecta(){
-	printf ("El programa se compilo con exito\n\n");
+	printf ("\n\t*~- El programa se compilo con exito -~*\n\n");
 }
 
 void escribirConsola(int n){
@@ -93,7 +93,7 @@ void escribirConsola(int n){
 void leerConsola(char* id){
 	asignarVariable(id);
 	int aux;
-	printf ("Ingrese el valor de %s:",id);
+	printf ("Ingrese el valor de %s: ",id);
     scanf("%d",&aux);
 	asignarValor(aux);
 }
