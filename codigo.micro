@@ -1,8 +1,11 @@
 inicio
 	algo := 5;
+	escribir (algo);
 	otracosa := algo + 3;
+	escribir(otracosa);
 	;
 	suma := algo + otracosa;
+	escribir(suma);
 	leer (a,b);
 	cc := a + (b-2);
 	escribir (cc, a+4);

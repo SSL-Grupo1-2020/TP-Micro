@@ -11,6 +11,42 @@ int cantVar=0;
 char** variables;
 int* valores;
 
+void ejecucionCorrecta(){
+	printf ("El programa se compilo con exito\n\n");
+}
+
+void escribirConsola(int n){
+	printf ("El valor es: %d\n",n);
+}
+
+void leerConsola(char* id){
+	asignarVariable(id);
+	int aux;
+	printf ("Ingrese el valor de %s:",id);
+    scanf("%d",&aux);
+	asignarValor(aux);
+}
+
+int obtenerValor(char* id){
+	for(int i=0;variables[i];i++){
+		if(strcmp(variables[i],id) == 0){
+			return valores[i];
+		}
+	}
+	return -1;
+}
+
+void asignarVariable(char* idNuevo){
+	variables[cantVar] = malloc(strlen(idNuevo));
+	variables[cantVar] = strdup(idNuevo);
+}
+
+void asignarValor(int valorNuevo){
+	valores[cantVar] = (int) malloc(sizeof(int));
+	valores[cantVar] = valorNuevo;
+	cantVar++;
+}
+
 %}
 %union{
    char* cadena;
@@ -39,7 +75,7 @@ leer: LEER PARENIZQUIERDO identificadores PARENDERECHO pycoma
 ;
 escribir: ESCRIBIR PARENIZQUIERDO expresiones PARENDERECHO pycoma
 ;
-asignacion: ID ASIGNACION expresion pycoma {printf("%s = %d\n",$1,$3);asignarVariable($1);asignarValor($3);}
+asignacion: ID ASIGNACION expresion pycoma {printf("Se le asigna %d a %s\n",$3,$1);asignarVariable($1);asignarValor($3);}
 ;
 identificadores: ID {leerConsola($1);}| ID COMA identificadores {leerConsola($1);}
 ; 
@@ -52,55 +88,6 @@ primaria: ID {$$=obtenerValor($1);} |CONSTANTE {$$=$1;} |PARENIZQUIERDO expresio
 operadorAditivo: SUMA {$$ = '+';} | RESTA {$$ = '-';}
 ;
 %%
-void ejecucionCorrecta(){
-	printf ("El programa se compilo con exito\n\n");
-}
-
-void escribirConsola(int n){
-	printf ("El valor es: %d\n",n);
-}
-
-void leerConsola(char* id){
-	asignarVariable(id);
-	int aux;
-	printf ("Ingrese el valor de %s:",id);
-    scanf("%d",&aux);
-	asignarValor(aux);
-}
-
-int obtenerValor(char* id){
-	for(int i=0;variables[i];i++){
-		if(strcmp(variables[i],id) == 0){
-			return valores[i];
-		}
-	}
-	return -1;
-}
-
-void asignarVariable(char* idNuevo){
-	printf ("Se guarda el id %s\n", idNuevo);
-	variables[cantVar] = malloc(strlen(idNuevo));
-	variables[cantVar] = strdup(idNuevo);
-}
-void asignarValor(int valorNuevo){
-	printf ("Se guarda el valor %d\n", valorNuevo);
-	valores[cantVar] = (int) malloc(sizeof(int));
-	valores[cantVar] = valorNuevo;
-	cantVar++;
-}
-int realizarOperacion(int n1, char operacion1, int n2){
-	int resultado;
-	switch(operacion1){
-		case '+':
-			resultado = n1+n2;
-		break;
-		case '-':
-			resultado = n1-n2;
-		break;
-		
-		printf ("%d %c %d = %d\n", n1, operacion1, n2,resultado);
-	}
-}
 
 void yyerror(char *s){
   printf("Error sintactico: %s.\n",s);

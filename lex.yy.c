@@ -570,7 +570,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 31 "scannerMicro-Grupo1.l"
+#line 30 "scannerMicro-Grupo1.l"
 
 
 #line 577 "lex.yy.c"
@@ -658,102 +658,102 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 33 "scannerMicro-Grupo1.l"
+#line 32 "scannerMicro-Grupo1.l"
 {printf("\n------------------------------------------------------------------\n\t\t\t*~- GRUPO 1 -~*\n-Integrantes:\n\t~Berrojalviz, Tomas\n\t~Carballo, Tomas\n\t~Garcia, Ignacio\n\t~Chittaro, Paula\n------------------------------------------------------------------\n");};
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 34 "scannerMicro-Grupo1.l"
+#line 33 "scannerMicro-Grupo1.l"
 {return 0;};
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 35 "scannerMicro-Grupo1.l"
+#line 34 "scannerMicro-Grupo1.l"
 {return (LEER);};
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 36 "scannerMicro-Grupo1.l"
+#line 35 "scannerMicro-Grupo1.l"
 {return (ESCRIBIR);};
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 37 "scannerMicro-Grupo1.l"
+#line 36 "scannerMicro-Grupo1.l"
 {return (INICIO);};
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 38 "scannerMicro-Grupo1.l"
+#line 37 "scannerMicro-Grupo1.l"
 {return (FIN);};
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 39 "scannerMicro-Grupo1.l"
+#line 38 "scannerMicro-Grupo1.l"
 {};
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 40 "scannerMicro-Grupo1.l"
+#line 39 "scannerMicro-Grupo1.l"
 {yylval.entero=atoi(yytext); return (CONSTANTE);};
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 41 "scannerMicro-Grupo1.l"
+#line 40 "scannerMicro-Grupo1.l"
 {return (ASIGNACION);};
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 42 "scannerMicro-Grupo1.l"
+#line 41 "scannerMicro-Grupo1.l"
 {return (SUMA);};
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 43 "scannerMicro-Grupo1.l"
+#line 42 "scannerMicro-Grupo1.l"
 {return (RESTA);};
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 44 "scannerMicro-Grupo1.l"
+#line 43 "scannerMicro-Grupo1.l"
 {yylval.cadena = strdup(yytext); return (ID);};
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 45 "scannerMicro-Grupo1.l"
+#line 44 "scannerMicro-Grupo1.l"
 {return (PARENIZQUIERDO);};
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 46 "scannerMicro-Grupo1.l"
+#line 45 "scannerMicro-Grupo1.l"
 {return (PARENDERECHO);};
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 47 "scannerMicro-Grupo1.l"
+#line 46 "scannerMicro-Grupo1.l"
 {linea++;return (NL);};
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 48 "scannerMicro-Grupo1.l"
+#line 47 "scannerMicro-Grupo1.l"
 {};
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 49 "scannerMicro-Grupo1.l"
+#line 48 "scannerMicro-Grupo1.l"
 {return (PYCOMA);};
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 50 "scannerMicro-Grupo1.l"
+#line 49 "scannerMicro-Grupo1.l"
 {return (COMA);};
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 51 "scannerMicro-Grupo1.l"
+#line 50 "scannerMicro-Grupo1.l"
 {printf("Error lexico en linea %d\n",linea);};
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 53 "scannerMicro-Grupo1.l"
+#line 52 "scannerMicro-Grupo1.l"
 ECHO;
 	YY_BREAK
 #line 760 "lex.yy.c"
@@ -1642,9 +1642,9 @@ int main()
 	return 0;
 	}
 #endif
-#line 53 "scannerMicro-Grupo1.l"
+#line 52 "scannerMicro-Grupo1.l"
 
 
 /* -------- ANOTACIONES
-espacio no funciona hay que poner " "
+LOS LEXEMAS "INTEGRANTES" Y "SALIR" SON DE LA PRIMERA ENTREGA DEL EJERCICIO INICAL DE FLEX, LOS DEJAMOS COMO RECORDATORIO DEL TP ANTERIOR.
 */

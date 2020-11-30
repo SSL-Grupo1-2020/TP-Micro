@@ -26,7 +26,6 @@ inicio "inicio"
 fin "fin"
 leer "leer"
 escribir "escribir"
-espacio ([ ])
 
 %%
 
@@ -53,5 +52,5 @@ fin 							{return (FIN);};
 %%
 
 /* -------- ANOTACIONES
-espacio no funciona hay que poner " "
+LOS LEXEMAS "INTEGRANTES" Y "SALIR" SON DE LA PRIMERA ENTREGA DEL EJERCICIO INICAL DE FLEX, LOS DEJAMOS COMO RECORDATORIO DEL TP ANTERIOR.
 */

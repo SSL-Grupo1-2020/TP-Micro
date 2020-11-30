@@ -82,10 +82,46 @@ int cantVar=0;
 char** variables;
 int* valores;
 
+void ejecucionCorrecta(){
+	printf ("El programa se compilo con exito\n\n");
+}
+
+void escribirConsola(int n){
+	printf ("El valor es: %d\n",n);
+}
+
+void leerConsola(char* id){
+	asignarVariable(id);
+	int aux;
+	printf ("Ingrese el valor de %s:",id);
+    scanf("%d",&aux);
+	asignarValor(aux);
+}
+
+int obtenerValor(char* id){
+	for(int i=0;variables[i];i++){
+		if(strcmp(variables[i],id) == 0){
+			return valores[i];
+		}
+	}
+	return -1;
+}
+
+void asignarVariable(char* idNuevo){
+	variables[cantVar] = malloc(strlen(idNuevo));
+	variables[cantVar] = strdup(idNuevo);
+}
+
+void asignarValor(int valorNuevo){
+	valores[cantVar] = (int) malloc(sizeof(int));
+	valores[cantVar] = valorNuevo;
+	cantVar++;
+}
+
 
 
 /* Line 189 of yacc.c  */
-#line 89 "y.tab.c"
+#line 125 "y.tab.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -152,7 +188,7 @@ typedef union YYSTYPE
 {
 
 /* Line 214 of yacc.c  */
-#line 15 "parserMicro-Grupo1.y"
+#line 51 "parserMicro-Grupo1.y"
 
    char* cadena;
    int entero;
@@ -161,7 +197,7 @@ typedef union YYSTYPE
 
 
 /* Line 214 of yacc.c  */
-#line 165 "y.tab.c"
+#line 201 "y.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -173,7 +209,7 @@ typedef union YYSTYPE
 
 
 /* Line 264 of yacc.c  */
-#line 177 "y.tab.c"
+#line 213 "y.tab.c"
 
 #ifdef short
 # undef short
@@ -465,9 +501,9 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    30,    30,    30,    32,    32,    34,    34,    34,    34,
-      34,    36,    36,    38,    40,    42,    44,    44,    46,    46,
-      48,    48,    50,    50,    50,    52,    52
+       0,    66,    66,    66,    68,    68,    70,    70,    70,    70,
+      70,    72,    72,    74,    76,    78,    80,    80,    82,    82,
+      84,    84,    86,    86,    86,    88,    88
 };
 #endif
 
@@ -1394,105 +1430,105 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 30 "parserMicro-Grupo1.y"
+#line 66 "parserMicro-Grupo1.y"
     {ejecucionCorrecta();}
     break;
 
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 30 "parserMicro-Grupo1.y"
+#line 66 "parserMicro-Grupo1.y"
     {ejecucionCorrecta();}
     break;
 
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 42 "parserMicro-Grupo1.y"
-    {printf("%s = %d\n",(yyvsp[(1) - (4)].cadena),(yyvsp[(3) - (4)].entero));asignarVariable((yyvsp[(1) - (4)].cadena));asignarValor((yyvsp[(3) - (4)].entero));}
+#line 78 "parserMicro-Grupo1.y"
+    {printf("Se le asigna %d a %s\n",(yyvsp[(3) - (4)].entero),(yyvsp[(1) - (4)].cadena));asignarVariable((yyvsp[(1) - (4)].cadena));asignarValor((yyvsp[(3) - (4)].entero));}
     break;
 
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 44 "parserMicro-Grupo1.y"
+#line 80 "parserMicro-Grupo1.y"
     {leerConsola((yyvsp[(1) - (1)].cadena));}
     break;
 
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 44 "parserMicro-Grupo1.y"
+#line 80 "parserMicro-Grupo1.y"
     {leerConsola((yyvsp[(1) - (3)].cadena));}
     break;
 
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 46 "parserMicro-Grupo1.y"
+#line 82 "parserMicro-Grupo1.y"
     {escribirConsola((yyvsp[(1) - (1)].entero));}
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 46 "parserMicro-Grupo1.y"
+#line 82 "parserMicro-Grupo1.y"
     {escribirConsola((yyvsp[(1) - (3)].entero));}
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 48 "parserMicro-Grupo1.y"
+#line 84 "parserMicro-Grupo1.y"
     {(yyval.entero)=(yyvsp[(1) - (1)].entero);}
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 48 "parserMicro-Grupo1.y"
+#line 84 "parserMicro-Grupo1.y"
     {if((yyvsp[(2) - (3)].caracter) == '+')	(yyval.entero)= (yyvsp[(1) - (3)].entero) + (yyvsp[(3) - (3)].entero);	else	(yyval.entero)=(yyvsp[(1) - (3)].entero) - (yyvsp[(3) - (3)].entero);}
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 50 "parserMicro-Grupo1.y"
+#line 86 "parserMicro-Grupo1.y"
     {(yyval.entero)=obtenerValor((yyvsp[(1) - (1)].cadena));}
     break;
 
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 50 "parserMicro-Grupo1.y"
+#line 86 "parserMicro-Grupo1.y"
     {(yyval.entero)=(yyvsp[(1) - (1)].entero);}
     break;
 
   case 24:
 
 /* Line 1455 of yacc.c  */
-#line 50 "parserMicro-Grupo1.y"
+#line 86 "parserMicro-Grupo1.y"
     {(yyval.entero)=(yyvsp[(2) - (3)].entero);}
     break;
 
   case 25:
 
 /* Line 1455 of yacc.c  */
-#line 52 "parserMicro-Grupo1.y"
+#line 88 "parserMicro-Grupo1.y"
     {(yyval.caracter) = '+';}
     break;
 
   case 26:
 
 /* Line 1455 of yacc.c  */
-#line 52 "parserMicro-Grupo1.y"
+#line 88 "parserMicro-Grupo1.y"
     {(yyval.caracter) = '-';}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1496 "y.tab.c"
+#line 1532 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1704,57 +1740,8 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 54 "parserMicro-Grupo1.y"
+#line 90 "parserMicro-Grupo1.y"
 
-void ejecucionCorrecta(){
-	printf ("El programa se compilo con exito\n\n");
-}
-
-void escribirConsola(int n){
-	printf ("El valor es: %d\n",n);
-}
-
-void leerConsola(char* id){
-	asignarVariable(id);
-	int aux;
-	printf ("Ingrese el valor de %s:",id);
-    scanf("%d",&aux);
-	asignarValor(aux);
-}
-
-int obtenerValor(char* id){
-	for(int i=0;variables[i];i++){
-		if(strcmp(variables[i],id) == 0){
-			return valores[i];
-		}
-	}
-	return -1;
-}
-
-void asignarVariable(char* idNuevo){
-	printf ("Se guarda el id %s\n", idNuevo);
-	variables[cantVar] = malloc(strlen(idNuevo));
-	variables[cantVar] = strdup(idNuevo);
-}
-void asignarValor(int valorNuevo){
-	printf ("Se guarda el valor %d\n", valorNuevo);
-	valores[cantVar] = (int) malloc(sizeof(int));
-	valores[cantVar] = valorNuevo;
-	cantVar++;
-}
-int realizarOperacion(int n1, char operacion1, int n2){
-	int resultado;
-	switch(operacion1){
-		case '+':
-			resultado = n1+n2;
-		break;
-		case '-':
-			resultado = n1-n2;
-		break;
-		
-		printf ("%d %c %d = %d\n", n1, operacion1, n2,resultado);
-	}
-}
 
 void yyerror(char *s){
   printf("Error sintactico: %s.\n",s);
